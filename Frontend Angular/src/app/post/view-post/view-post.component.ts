@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CommentPayload } from 'src/app/comment/comment.payload';
 import { CommentService } from 'src/app/comment/comment.service';
+import { AuthService } from 'src/app/auth/shared/auth.service';
 
 @Component({
   selector: 'app-view-post',
@@ -15,44 +16,52 @@ import { CommentService } from 'src/app/comment/comment.service';
 export class ViewPostComponent implements OnInit {
 
   postId: number;
-  post: PostModel;
+  post: PostModel = new PostModel;
   commentForm: FormGroup;
   commentPayload: CommentPayload;
-  comments: CommentPayload[];
+  comments: CommentPayload[] =[];
+  isLoggedIn: boolean;
 
   constructor(private postService: PostService, private activateRoute: ActivatedRoute,
-    private commentService: CommentService, private router: Router) {
-    this.postId = this.activateRoute.snapshot.params.id;
+    private commentService: CommentService, private authService:AuthService) {
+    this.postId = this.activateRoute.snapshot.params['id'];
+    this.isLoggedIn = this.authService.isLoggedIn();
 
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
     this.commentPayload = {
       text: '',
-      postId: this.postId
+      postId: this.postId,
+      userName:'',
+      duration: ''
     };
   }
 
   ngOnInit(): void {
     this.getPostById();
     this.getCommentsForPost();
+    this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
   }
 
   postComment() {
-    this.commentPayload.text = this.commentForm.get('text').value;
+    var commentTextControl = this.commentForm.get('text');
+    if (commentTextControl !== null){
+    this.commentPayload.text = commentTextControl.value;
     this.commentService.postComment(this.commentPayload).subscribe(data => {
-      this.commentForm.get('text').setValue('');
+      this.commentForm.get('text')?.setValue('');
       this.getCommentsForPost();
     }, error => {
-      throwError(error);
+      throwError(()=>error);
     })
+  }
   }
 
   private getPostById() {
     this.postService.getPost(this.postId).subscribe(data => {
       this.post = data;
     }, error => {
-      throwError(error);
+      throwError(()=>error);
     });
   }
 
@@ -60,8 +69,12 @@ export class ViewPostComponent implements OnInit {
     this.commentService.getAllCommentsForPost(this.postId).subscribe(data => {
       this.comments = data;
     }, error => {
-      throwError(error);
+      throwError(()=>error);
     });
   }
-
+  
+  // Add this property and method to handle the description expansion
+  toggleDescription(post: PostModel): void {
+    post.isExpanded = !post.isExpanded;
+  }
 }

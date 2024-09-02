@@ -35,10 +35,12 @@ export class CreateSubredditComponent implements OnInit {
   }
 
   createSubreddit() {
-    this.subredditModel.name = this.createSubredditForm.get('title')
-    .value;
-    this.subredditModel.description = this.createSubredditForm.get('description')
-    .value;
+    var titleControl =  this.createSubredditForm.get('title');
+    var descriptionControl = this.createSubredditForm.get('description');
+    if (titleControl !== null && descriptionControl !== null) {
+    this.subredditModel.name = titleControl.value;
+    this.subredditModel.description = descriptionControl.value;
+    }
     this.subredditService.createSubreddit(this.subredditModel).subscribe(data => {
       this.router.navigateByUrl('/list-subreddits');
     }, error => {

@@ -20,30 +20,41 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayload = {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      firstname: '',
+      lastname: ''
     };
-  }
-
-  ngOnInit() {
     this.signupForm = new FormGroup({
       username: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
     });
   }
 
+  ngOnInit() {
+  }
+
   signup() {
-    this.signupRequestPayload.email = this.signupForm.get('email').value;
-    this.signupRequestPayload.username = this.signupForm.get('username').value;
-    this.signupRequestPayload.password = this.signupForm.get('password').value;
+    this.signupRequestPayload.email = this.signupForm.get('email')?.value;
+    this.signupRequestPayload.username = this.signupForm.get('username')?.value;
+    this.signupRequestPayload.password = this.signupForm.get('password')?.value;
+    this.signupRequestPayload.firstname = this.signupForm.get('firstname')?.value;
+    this.signupRequestPayload.lastname = this.signupForm.get('lastname')?.value;
+
+
 
     this.authService.signup(this.signupRequestPayload)
-      .subscribe(data => {
-        this.router.navigate(['/login'],
+    .subscribe({
+      next : data => {this.router.navigate(['/login'],
           { queryParams: { registered: 'true' } });
-      }, error => {
-        console.log(error);
-        this.toastr.error('Registration Failed! Please try again');
-      });
+        },
+      error: (err) => {
+        console.log(err);
+        this.toastr.error(`Registration Failed! ${err.error}`);
+      },
+      })
   }
 }
+

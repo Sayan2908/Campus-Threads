@@ -10,7 +10,7 @@ import { throwError } from 'rxjs';
 })
 export class ListSubredditsComponent implements OnInit {
 
-  subreddits: Array<SubredditModel>;
+  subreddits: Array<SubredditModel> = [];
   constructor(private subredditService: SubredditService) { }
 
   ngOnInit() {

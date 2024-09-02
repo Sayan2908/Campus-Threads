@@ -9,7 +9,7 @@ import { SubredditModel } from 'src/app/subreddit/subreddit-response';
 })
 export class SubredditSideBarComponent implements OnInit {
   subreddits: Array<SubredditModel> = [];
-  displayViewAll: boolean;
+  displayViewAll: boolean = false;
 
   constructor(private subredditService: SubredditService) {
     this.subredditService.getAllSubreddits().subscribe(data => {

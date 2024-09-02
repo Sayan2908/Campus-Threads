@@ -11,19 +11,21 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   faUser = faUser;
   isLoggedIn: boolean;
-  username: string;
+  userName: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.userName = this.authService.getUserName();
+  }
 
   ngOnInit() {
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
-    this.authService.username.subscribe((data: string) => this.username = data);
-    this.isLoggedIn = this.authService.isLoggedIn();
-    this.username = this.authService.getUserName();
+    this.authService.userName.subscribe((data: string) => this.userName = data);
+
   }
 
   goToUserProfile() {
-    this.router.navigateByUrl('/user-profile/' + this.username);
+    this.router.navigateByUrl('/user-profile/' + this.userName);
   }
 
   logout() {
