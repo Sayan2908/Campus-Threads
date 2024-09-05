@@ -1,18 +1,18 @@
 package com.chriskocabas.redditclone.model;
 
-import com.chriskocabas.redditclone.repository.IUserRepository;
+// import com.chriskocabas.redditclone.repository.IUserRepository;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
+// import jakarta.transaction.Transactional;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+// import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
+// import java.util.Optional;
 
 @Data
 @Builder
