@@ -16,4 +16,6 @@
   
   .sidebar-view-subreddit {
     height: 280px;
+    top: 300px;
+    position: sticky;
   }

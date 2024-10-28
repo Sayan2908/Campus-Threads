@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="row">
+    <div class="body">
       <div class="create-subreddit-container">
         <form class="post-form" [formGroup]="createSubredditForm" (ngSubmit)="createSubreddit()">
           <div class="form-group">
-            <div class="create-subreddit-heading">Create Subreddit</div>
+            <div class="create-subreddit-heading">Create Thread</div>
             <hr />
-            <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px"
+            <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px; text-align: center;"
               placeholder="Title">
-            <textarea type="text" [formControlName]="'description'" style="width: 100%; margin-top: 5px"
+            <textarea type="text" [formControlName]="'description'" style="width: 100%; margin-top: 5px; text-align: center; border-radius: 20px; min-height: 180px;"
               placeholder="Description"></textarea>
             <div>
-              <div style="margin-top: 5px" class="float-right">
+              <div style="margin-top: 5px; display: flex; justify-content: end; gap: 12px; align-items: center;">
                 <button (click)="discard()" class="btnDiscard">Discard</button>
                 <button class="btnCreateSubreddit">Create</button>
               </div>
@@ -20,14 +20,14 @@
       </div>
       <div class="col-md-3">
         <div class="sidebar">
-          <h5 class="guidelines">Posting to Spring Reddit</h5>
+          <h5 class="guidelines">Posting to Campus Threads</h5>
           <hr />
           <ul>
-            <li>Remember the human</li>
+            <li>Maintain the integity of the Institute</li>
             <hr />
-            <li>Behave like you would in real life</li>
+            <li>Be mindful of others' personal space</li>
             <hr />
-            <li>Don't spam</li>
+            <li>Kindly don't spam messages</li>
             <hr />
           </ul>
         </div>

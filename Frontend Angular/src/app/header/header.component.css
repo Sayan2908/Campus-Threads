@@ -1,32 +1,27 @@
-header{
-  border-radius: 1px solid;
-}
-
-
-.reddit-icon-svg{
-  height: 50px;
+.camthreadicon{
+  height: 60px;
   padding: 8px 8px 8px 0;
   width: 50px;
 }
 
-.reddit-text{
+.camthreads{
   font-weight: 700;
   height: 50px;
   width: 50px;
+  color: #fff;
 }
 
 .logo{
   text-decoration: none;
 }
 
-.login, .signup{
-  background-color: transparent;
-  border-color: #0079D3;
-  color: #0079D3;
-  fill: #0079D3;
+.login{
+  border-color: #fff;
+  color: #000;
+  background-color: #ffffff;
   border: 1px solid;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 20px;
+  /* box-sizing: border-box; */
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none;
@@ -40,9 +35,22 @@ header{
 }
 
 .signup{
-  background-color: #0079D3;
-  border-color: #0079D3;
-  color: aliceblue;
+  background-color: #000000;
+  border-color: #000000;
+  color: rgb(255, 255, 255);
+  border: 1px solid;
+  border-radius: 20px;
+  /* box-sizing: border-box; */
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
 
 }
 

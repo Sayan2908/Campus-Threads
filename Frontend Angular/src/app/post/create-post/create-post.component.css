@@ -1,77 +1,86 @@
 .btnCreatePost,
 .btnCreateSubreddit {
   margin-top: 5px;
+  background-color: #333;
+  border-color: #555;
+  color: #f0f0f0;
 }
 
 .post-form {
   margin: 2px;
+  background-color: #333;
+  color: #f0f0f0;
 }
 
 .comment-notification {
   margin-top: 5px;
+  background-color: #444;
+  color: #f0f0f0;
 }
 
 .create-post-container {
   margin-top: 10px;
-  --post-line-color: #ccc;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #878A8C;
-  position: relative;
-  border-radius: 4px;
-  padding: 5px;
+  --post-line-color: #555;
+  border: 1px solid #555;
+  background-color: rgba(30, 30, 30, 0.9);
+  color: #ddd;
+  border-radius: 16px;
+  padding: 10px;
+  /* display: flex;
+  /* align-items: center; */
+  /* justify-content: center;  */
 }
 
+/* .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
 .btnDiscard {
-    fill: #0079D3;
-    border: 1px solid;
-    border-radius: 4px;
-    text-align: center;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    line-height: 24px;
-    text-transform: uppercase;
-    padding: 3px 16px;
-    opacity: 1;
-    width: 288px;
-    height: 34px;
-    margin-top: 5px;
-    color: #0079D3;
-    background-color: transparent;
-  }
+  fill: #ddd;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #ddd;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  width: 288px;
+  height: 34px;
+  margin-top: 5px;
+  border-radius: 16px;
+}
 
 .create-post-heading {
   font-size: 18px;
   font-weight: 500;
-  line-height: 22px;
-  color: #1c1c1c;
-  -ms-flex: 1;
-  flex: 1;
+  color: #f0f0f0;
+  text-align: center;
 }
 
 .btnCreatePost {
-    background-color: #0079D3;
-    border-color: #0079D3;
-    color: aliceblue;
-    fill: #0079D3;
-    border: 1px solid;
-    border-radius: 4px;
-    text-align: center;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    line-height: 24px;
-    text-transform: uppercase;
-    padding: 3px 16px;
-    opacity: 1;
-    width: 288px;
-    height: 34px;
-  }
+  background-color: #444;
+  border-color: #555;
+  color: #f0f0f0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  width: 288px;
+  height: 34px;
+  border-radius: 16px;
+}
+
+.form-control{
+  text-align: center;
+
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

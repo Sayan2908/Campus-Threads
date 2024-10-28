@@ -42,7 +42,7 @@ export class CreateSubredditComponent implements OnInit {
     this.subredditModel.description = descriptionControl.value;
     }
     this.subredditService.createSubreddit(this.subredditModel).subscribe(data => {
-      this.router.navigateByUrl('/list-subreddits');
+      this.router.navigateByUrl('/list-threads');
     }, error => {
       throwError(error);
     })

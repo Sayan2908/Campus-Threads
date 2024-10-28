@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="body">
     <hr />
     <div class="create-post-container col-md-9">
       <form
@@ -8,14 +8,14 @@
         (ngSubmit)="createPost()"
       >
         <div class="form-group">
-          <div class="create-post-heading">Create Post</div>
+          <div class="create-post-heading" style="font-weight: 700;">Create New Post</div>
           <hr />
           <input
             type="text"
             [formControlName]="'postName'"
-            class="form-control"
+            class="form-control bold"
             style="margin-top: 5px"
-            placeholder="Title"
+            placeholder="Title of your Post"
           />
 
           <input
@@ -46,7 +46,7 @@
           ></textarea>
 
           <span>
-            <div style="margin-top: 5px" class="float-right">
+            <div style="margin-top: 5px; display: flex; justify-content: space-around;" >
               <button (click)="discardPost()" class="btnDiscard">
                 Discard
               </button>

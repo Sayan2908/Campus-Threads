@@ -1,19 +1,14 @@
 <div class="register-section">
   <div class="row justify-content-center">
-    <div class="col-md-3"></div>
     <div class="col-md-6">
-      <div class="card">
-        <div class="card-header" style="text-align: center">
+      <div class="card register-card">
+        <div class="card-header text-center">
           <h4>Register</h4>
         </div>
         <div class="card-body">
           <form [formGroup]="signupForm" (ngSubmit)="signup()">
             <div class="form-group row">
-              <label
-                for="email_address"
-                class="col-md-4 col-form-label text-md-right"
-                >E-Mail</label
-              >
+              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
               <div class="col-md-6">
                 <input
                   type="text"
@@ -24,21 +19,14 @@
                   required
                   autofocus
                 />
-                <span
-                  *ngIf="
-                    !signupForm.get('email')?.valid &&
-                    signupForm.get('email')?.touched
-                  "
-                >
+                <span class="error-text" *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">
                   Please provide a valid email
                 </span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label class="col-md-4 col-form-label text-md-right"
-                >Username</label
-              >
+              <label class="col-md-4 col-form-label text-md-right">Username</label>
               <div class="col-md-6">
                 <input
                   type="text"
@@ -47,23 +35,14 @@
                   required
                   autofocus
                 />
-                <span
-                  *ngIf="
-                    !signupForm.get('username')?.valid &&
-                    signupForm.get('username')?.touched
-                  "
-                >
+                <span class="error-text" *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched">
                   Please provide a valid username
                 </span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label
-                for="password"
-                class="col-md-4 col-form-label text-md-right"
-                >Password</label
-              >
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
               <div class="col-md-6">
                 <input
                   type="password"
@@ -73,23 +52,14 @@
                   name="password"
                   required
                 />
-                <span
-                  *ngIf="
-                    !signupForm.get('password')?.valid &&
-                    signupForm.get('password')?.touched
-                  "
-                >
-                  Please provide a valid Password
+                <span class="error-text" *ngIf="!signupForm.get('password')?.valid && signupForm.get('password')?.touched">
+                  Please provide a valid password
                 </span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label
-                for="firstname"
-                class="col-md-4 col-form-label text-md-right"
-                >Firstname</label
-              >
+              <label for="firstname" class="col-md-4 col-form-label text-md-right">Firstname</label>
               <div class="col-md-6">
                 <input
                   type="text"
@@ -99,23 +69,14 @@
                   name="firstname"
                   required
                 />
-                <span
-                  *ngIf="
-                    !signupForm.get('password')?.valid &&
-                    signupForm.get('password')?.touched
-                  "
-                >
-                  Please provide a valid Firstname
+                <span class="error-text" *ngIf="!signupForm.get('firstname')?.valid && signupForm.get('firstname')?.touched">
+                  Please provide a valid firstname
                 </span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label
-                for="lastname"
-                class="col-md-4 col-form-label text-md-right"
-                >Lastname</label
-              >
+              <label for="lastname" class="col-md-4 col-form-label text-md-right">Lastname</label>
               <div class="col-md-6">
                 <input
                   type="text"
@@ -125,29 +86,21 @@
                   name="lastname"
                   required
                 />
-                <span
-                  *ngIf="
-                    !signupForm.get('password')?.valid &&
-                    signupForm.get('password')?.touched
-                  "
-                >
-                  Please provide a valid Lastname
+                <span class="error-text" *ngIf="!signupForm.get('lastname')?.valid && signupForm.get('lastname')?.touched">
+                  Please provide a valid lastname
                 </span>
               </div>
             </div>
 
-            <span class="d-flex flex-column">
-              <button type="submit" class="sign-up login align-self-center">
-                Sign Up
-              </button>
-              <span style="padding-right: 1rem" class="align-self-end mt-4"
-                >Existing user? <a routerLink="/login">Log In</a></span
-              >
-            </span>
+            <div class="d-flex flex-column text-center mt-4">
+              <button type="submit" class="btn sign-up">Sign Up</button>
+              <span class="mt-4">
+                Existing user? <a routerLink="/login" class="login-link">Log In</a>
+              </span>
+            </div>
           </form>
         </div>
       </div>
     </div>
-    <div class="col-md-3"></div>
   </div>
 </div>

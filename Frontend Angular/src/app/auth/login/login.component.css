@@ -1,19 +1,65 @@
-.login-section{
-    margin: 100px;
-}
-
-.login-failed, .register-success{
-    text-align: center;
-    margin: auto;
-    margin-top: 10px;
-    border: 2px solid black;
-    width: 65%;    
-    background-color: red;
-}
-
-.login-failed-text, .register-success-text{
-    text-align: center;
+.login-section {
+    margin: 80px auto;
+    padding: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 0.9em;
+    display: block;
     margin-top: 5px;
-    font-weight: bold;    
-    color: aliceblue;
-}
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #52565c;
+  }
+  
+  .sign-up-link {
+    color: #92d43c;
+    text-decoration: none;
+  }
+  
+  .sign-up-link:hover {
+    text-decoration: underline;
+  }
+  

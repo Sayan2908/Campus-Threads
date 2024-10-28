@@ -18,7 +18,7 @@ export class SideBarComponent implements OnInit {
   }
 
   goToCreateSubreddit() {
-    this.router.navigateByUrl('/create-subreddit');
+    this.router.navigateByUrl('/create-thread');
   }
 
 }
