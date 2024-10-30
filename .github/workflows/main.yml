@@ -1,4 +1,4 @@
-name: Build and Verify Backend
+name: Build and Verify Spring Boot Application
 
 on:
   push:
@@ -13,14 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Check out the code from the repository
     - name: Check out code
       uses: actions/checkout@v2
 
+    # Step 2: Set up JDK 17 (or specify another version if needed)
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
+        distribution: 'temurin'  # Specify the Java distribution
 
+    # Step 3: Cache dependencies to improve build speed
     - name: Cache Maven dependencies
       uses: actions/cache@v3
       with:
@@ -29,13 +33,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
+    # Step 4: Build and verify the application
     - name: Build and Test
       run: mvn clean verify
 
+  # Conditional Approval for Push
   approve-push:
     needs: build
     runs-on: ubuntu-latest
-    if: success()
+    if: success() # Allows push only if the build is successful
 
     steps:
     - name: Approve Push
