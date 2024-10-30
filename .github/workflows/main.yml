@@ -22,19 +22,20 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'  # Specify the Java distribution
+        distribution: 'temurin'
 
     # Step 3: Cache dependencies to improve build speed
     - name: Cache Maven dependencies
       uses: actions/cache@v3
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        key: ${{ runner.os }}-maven-${{ hashFiles('CampusThreads/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
     # Step 4: Build and verify the application
     - name: Build and Test
+      working-directory: CampusThreads  # Set working directory to the correct path
       run: mvn clean verify
 
   # Conditional Approval for Push
